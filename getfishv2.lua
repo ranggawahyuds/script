@@ -45,6 +45,15 @@ end
 local ToServer = fishingFolder:WaitForChild("ToServer")
 local ToClient = fishingFolder:WaitForChild("ToClient")
 
+-- ⛔ Block minigame start (client-side)
+if ToClient:FindFirstChild("MinigameStarted") then
+    ToClient.MinigameStarted.OnClientEvent:Connect(function()
+        -- sengaja dikosongkan
+        -- server tetap jalan, UI minigame tidak diproses
+        warn("⛔ MinigameStarted blocked")
+    end)
+end
+
 --================ SESSION ID ================
 local function UpdateSessionID()
     for _, obj in ipairs(ReplicatedStorage:GetChildren()) do
