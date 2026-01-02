@@ -47,7 +47,7 @@ local ToClient = fishingFolder:WaitForChild("ToClient")
 
 -- ⛔ Block minigame start (client-side)
 if ToClient:FindFirstChild("MinigameStarted") then
-    ToClient.MinigameStarted.OnClientEvent:Connect(function()
+    ToServer.MinigameStarted.OnClientEvent:Connect(function()
         -- sengaja dikosongkan
         -- server tetap jalan, UI minigame tidak diproses
         warn("⛔ MinigameStarted blocked")
