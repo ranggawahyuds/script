@@ -57,7 +57,7 @@ end)
 
 --================ UI =================
 local Window = Rayfield:CreateWindow({
-    Name = "🎣 Auto Fishing (No StartBite)",
+    Name = "🎣 Auto Fishing GET FISH",
     LoadingTitle = "Auto Fishing",
     LoadingSubtitle = "CAST → ReelFinished",
     ConfigurationSaving = {Enabled = false},
@@ -91,7 +91,8 @@ RunService.RenderStepped:Connect(function()
         stats.casts += 1
 
         -- THROW (power + session)
-        local power = math.random(80,100)/100
+        --local power = math.random(80,100)/100
+        local power = 100
         ThrowRemote:FireServer(power, SESSION_ID)
 
         -- DELAY → FINISH REEL
@@ -105,7 +106,8 @@ RunService.RenderStepped:Connect(function()
             ToServer.ReelFinished:FireServer({
                 duration = math.random(4.5,5),
                 result = "SUCCESS",
-                insideRatio = math.random(80,85)/100
+                --insideRatio = math.random(80,85)/100
+                insideRatio = 100
             }, SESSION_ID)
         end)
     end
@@ -136,4 +138,4 @@ Rayfield:Notify({
     Duration = 3
 })
 
-print("✅ Auto Fishing NO StartBite Loaded")
+print("✅ Auto Fishing Loaded")
