@@ -91,8 +91,7 @@ RunService.RenderStepped:Connect(function()
         stats.casts += 1
 
         -- THROW (power + session)
-        --local power = math.random(80,100)/100
-        local power = 100
+        local power = math.random(80,100)/100
         ThrowRemote:FireServer(power, SESSION_ID)
 
         -- DELAY → FINISH REEL
