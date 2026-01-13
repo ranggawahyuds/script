@@ -106,8 +106,7 @@ RunService.RenderStepped:Connect(function()
             ToServer.ReelFinished:FireServer({
                 duration = math.random(4.5,5),
                 result = "SUCCESS",
-                --insideRatio = math.random(80,85)/100
-                insideRatio = 100
+                insideRatio = math.random(80,85)/100
             }, SESSION_ID)
         end)
     end
